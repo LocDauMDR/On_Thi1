@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,9 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 import java.util.Locale;
 
-import vn.edu.ntu.quangloc.controller.INgoaiTe;
-import vn.edu.ntu.quangloc.controller.NgoaiTe;
-import vn.edu.ntu.quangloc.model.NT;
+import vn.edu.ntu.quangloc.controller.INgoaiTeController;
+import vn.edu.ntu.quangloc.model.NgoaiTe;
 
 public class SecondFragment extends Fragment {
 
@@ -41,7 +39,7 @@ public class SecondFragment extends Fragment {
     private void addViews(View v) {
         rvNT = v.findViewById(R.id.rvNT);
         rvNT.setLayoutManager(new LinearLayoutManager(getContext()));
-        list = ((INgoaiTe)getActivity().getApplication()).getAll();
+        list = ((INgoaiTeController)getActivity().getApplication()).getAll();
         adapter = new NgoaiTeAdapter(list);
         rvNT.setAdapter(adapter);
     }
@@ -61,7 +59,7 @@ public class SecondFragment extends Fragment {
     private class NgoaiTeViewHolder extends RecyclerView.ViewHolder{
         TextView txtDate, txtNT1, txtNT2, txtMua, txtBan;
 //        ImageView imvAddToCart;
-        NT p;
+        NgoaiTe p;
         private NgoaiTeViewHolder(@NonNull View itemView) {
             super(itemView);
             txtDate = this.itemView.findViewById(R.id.txtDate);
@@ -71,7 +69,7 @@ public class SecondFragment extends Fragment {
             txtBan = this.itemView.findViewById(R.id.txtBan);
         }
 
-        private void bind(NT p){
+        private void bind(NgoaiTe p){
             this.p = p;
             txtDate.setText(p.getDate());
             txtNT1.setText(p.getType1());

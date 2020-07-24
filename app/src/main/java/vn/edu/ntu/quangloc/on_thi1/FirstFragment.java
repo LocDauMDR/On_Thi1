@@ -23,9 +23,8 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import java.util.Calendar;
 
-import vn.edu.ntu.quangloc.controller.INgoaiTe;
-import vn.edu.ntu.quangloc.controller.NgoaiTe;
-import vn.edu.ntu.quangloc.model.NT;
+import vn.edu.ntu.quangloc.controller.INgoaiTeController;
+import vn.edu.ntu.quangloc.model.NgoaiTe;
 
 public class FirstFragment extends Fragment {
     NavController navController;
@@ -33,7 +32,7 @@ public class FirstFragment extends Fragment {
     EditText edtDate, edtMua, edtBan;
     RadioGroup rdgType;
     Button btnThem, btnXDS;
-    INgoaiTe controller;
+    INgoaiTeController controller;
     String[] arrayPT;
     ArrayAdapter<String> adapterPT;
     Spinner spinner;
@@ -55,7 +54,7 @@ public class FirstFragment extends Fragment {
     private void addViews(View v) {
         navController = NavHostFragment.findNavController(FirstFragment.this);
         ((MainActivity) getActivity()).navController = navController;
-        controller = (INgoaiTe) getActivity().getApplication();
+        controller = (INgoaiTeController) getActivity().getApplication();
         imvDate = v.findViewById(R.id.imvDate);
         edtDate = v.findViewById(R.id.edtDate);
         edtMua = v.findViewById(R.id.edtMua);

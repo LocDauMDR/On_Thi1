@@ -1,13 +1,13 @@
 package vn.edu.ntu.quangloc.model;
 
-public class NT {
+public class NgoaiTe {
     private String date;
     private String type1;
     private String type2;
     private int mua;
     private int ban;
 
-    public NT(String date, String type1, String type2, int mua, int ban) {
+    public NgoaiTe(String date, String type1, String type2, int mua, int ban) {
         this.date = date;
         this.type1 = type1;
         this.type2 = type2;

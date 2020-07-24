@@ -5,10 +5,12 @@ import android.app.Application;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NgoaiTe extends Application implements INgoaiTe {
+import vn.edu.ntu.quangloc.model.NgoaiTe;
+
+public class NgoaiTeController extends Application implements INgoaiTeController {
     List<NgoaiTe> list = new ArrayList<>();
 
-    public NgoaiTe() {
+    public NgoaiTeController() {
     }
 
     @Override
